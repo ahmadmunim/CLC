@@ -5,11 +5,10 @@
 #include "main.h"
 #include "binary.c"
 #include "unary.c"
-// #include "operator.h"
 #include "advanced.c"
 #include "memory.c"
+#include "numberSystems.c"
 
-//int a = 0;
 int counter = 0;
 
 int main(void) {
@@ -44,10 +43,10 @@ int main(void) {
             case 'a':
                 advancedOpSelection();
                 break;
-            // case 'N':
-            // case 'n':
-            //     numberSystemsOp();
-            //     break;
+            case 'N':
+            case 'n':
+                numberSystemsOp();
+                break;
             case 'M':
             case 'm':
                 memoryView();
@@ -84,7 +83,7 @@ char optionSelection() // VALIDATES THE USER'S INPUT WHEN SELECTING AN OPTION
 
     while (1)
     {
-        puts("\nSelect one of these operations (B, U, V, A, M, R, X): ");
+        puts("\nSelect one of these operations (B, U, V, A, N, M, R, X): ");
         scanf(" %c", &l);
 
         if(l == 'X' || l == 'x') // EXITS THE PROGRAM
@@ -105,6 +104,8 @@ char optionSelection() // VALIDATES THE USER'S INPUT WHEN SELECTING AN OPTION
             case 'v':
             case 'M':
             case 'm':
+            case 'N':
+            case 'n':
             // case 'R':
             // case 'r':
                 return l; // RETURNS ANY OF THE ABOVE CASES FOR THE MAIN FUNCTION TO ORGANIZE
